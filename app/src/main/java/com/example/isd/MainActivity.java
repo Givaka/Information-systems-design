@@ -3,7 +3,9 @@ package com.example.isd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +17,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Toast toast = Toast.makeText(this, "Hello Android!", Toast.LENGTH_LONG);
+        LayoutInflater inflater = getLayoutInflater();
+        View laout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.toast_layout));
+
+        TextView text = laout.findViewById(R.id.text);
+        text.setText("Hello Android!");
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(laout);
         toast.show();
     }
 }
