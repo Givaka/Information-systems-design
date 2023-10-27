@@ -17,7 +17,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 
-        android:textSize="26sp"
+        android:textSize="34sp"
         />
 
     <EditText
@@ -31,6 +31,20 @@
         app:layout_constraintRight_toRightOf="parent"
 
         android:hint="Введите имя"
+        />
+
+    <Button
+        android:onClick="sendMessage"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintRight_toRightOf="parent"
+
+        android:text="Ввод"
+
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
