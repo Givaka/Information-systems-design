@@ -9,44 +9,20 @@
 
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/selection"
+    <ToggleButton
+        android:id="@+id/toggle"
+        android:onClick="onToggleClicked"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        android:textSize="26sp"
+        android:textOn="Включено"
+        android:textOff="Выключено"
         />
 
-    <CheckBox
-        android:id="@+id/java"
-        android:onClick="onCheckBoxClick"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selection"
-
-        android:text="Java"
-        android:textSize="26sp"
-
-        />
-
-    <CheckBox
-        android:id="@+id/kotlin"
-        android:onClick="onCheckBoxClick"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/java"
-
-        android:text="Kotlin"
-        android:textSize="26sp"
-
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>

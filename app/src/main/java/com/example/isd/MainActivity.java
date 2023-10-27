@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,17 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onCheckBoxClick(View view) {
-        CheckBox java   = findViewById(R.id.java);
-        CheckBox kotlin = findViewById(R.id.kotlin);
-        TextView selection = findViewById(R.id.selection);
-
-        String selectedItems = "";
-
-        if (java.isChecked())     selectedItems += java.getText()   + " ";
-        if (kotlin.isChecked())   selectedItems += kotlin.getText() + " ";
-
-        selection.setText(selectedItems);
-
+    public void onToggleClicked(View view) {
+        boolean on = ((ToggleButton) view).isChecked();
+        if(on)  Toast.makeText(this, "Свет включен", Toast.LENGTH_LONG).show();
+        else    Toast.makeText(this, "Свет выключен", Toast.LENGTH_LONG).show();
     }
 }
