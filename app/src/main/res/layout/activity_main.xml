@@ -8,56 +8,15 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
 
-        android:background="#ffebee"
-
-        android:text="Hello Android"
-        android:fontFamily="sans-serif"
-        android:textSize="26sp"
-        android:textColor="#f44336"
-
-        />
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        android:background="#ede7f6"
-
-        android:text="Hello Java"
-        android:textAllCaps="true"
-        android:textSize="26sp"
-        android:textColor="#7e57c2"
-
-        />
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        android:background="#e8eaf6"
-
-        android:text="Hello World"
-        android:textAlignment="textEnd"
-        android:textSize="26sp"
-        android:textColor="#5c6bc0"
-
+        android:text="Посетите сайт https://metanit.com"
+        android:textSize="21sp"
+        android:autoLink="web|email"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
