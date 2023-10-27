@@ -3,10 +3,9 @@ package com.example.isd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,15 +16,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        LayoutInflater inflater = getLayoutInflater();
-        View laout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.toast_layout));
-
-        TextView text = laout.findViewById(R.id.text);
-        text.setText("Hello Android!");
-
-        Toast toast = new Toast(getApplicationContext());
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(laout);
-        toast.show();
+        Snackbar.make(view, "Hello Android!", Snackbar.LENGTH_LONG).show();
     }
 }
