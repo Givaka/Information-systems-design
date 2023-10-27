@@ -24,6 +24,9 @@
     <DatePicker
         android:id="@+id/datePicker"
 
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dateTextView"
 
