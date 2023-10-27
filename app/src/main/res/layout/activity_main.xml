@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/dateTextView"
+        android:id="@+id/timeTextView"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,17 +21,17 @@
         android:textSize="26sp"
         />
 
-    <DatePicker
-        android:id="@+id/datePicker"
+    <TimePicker
+        android:id="@+id/timePicker"
 
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dateTextView"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeTextView"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

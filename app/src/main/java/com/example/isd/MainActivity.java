@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView dateTextView = findViewById(R.id.dateTextView);
-        DatePicker datePicker = this.findViewById(R.id.datePicker);
+        TextView timeTextView = findViewById(R.id.timeTextView);
+        TimePicker timePicker = this.findViewById(R.id.timePicker);
 
-        datePicker.init(2020, 02, 01, new DatePicker.OnDateChangedListener() {
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
-            public void onDateChanged(DatePicker view, int i, int i1, int i2) {
-                dateTextView.setText("Дата: " + view.getDayOfMonth() + "/" + (view.getMonth() + 1) + "/" + view.getYear());
+            public void onTimeChanged(TimePicker view, int i, int i1) {
+                timeTextView.setText("Время: " + i + ":"+i1);
             }
         });
     }
