@@ -15,16 +15,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onCheckBoxClick(View view){
-        CheckBox checkBox = (CheckBox) view;
+    public void onCheckBoxClick(View view) {
+        CheckBox java   = findViewById(R.id.java);
+        CheckBox kotlin = findViewById(R.id.kotlin);
         TextView selection = findViewById(R.id.selection);
 
-        if(checkBox.isChecked()){
-            selection.setText("Включено");
-            checkBox.setText("Выключить");
-        } else {
-            selection.setText("Выключено");
-            checkBox.setText("Включить");
-        }
+        String selectedItems = "";
+
+        if (java.isChecked())     selectedItems += java.getText()   + " ";
+        if (kotlin.isChecked())   selectedItems += kotlin.getText() + " ";
+
+        selection.setText(selectedItems);
+
     }
 }
