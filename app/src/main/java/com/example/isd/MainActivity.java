@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -17,9 +18,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onToggleClicked(View view) {
-        boolean on = ((ToggleButton) view).isChecked();
-        if(on)  Toast.makeText(this, "Свет включен", Toast.LENGTH_LONG).show();
-        else    Toast.makeText(this, "Свет выключен", Toast.LENGTH_LONG).show();
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        TextView selection = findViewById(R.id.selection);
+
+        if (checked) {
+            if (view.getId() == R.id.java) selection.setText("Выбрана Java");
+            if (view.getId() == R.id.kotlin) selection.setText("Выбран Kotlin");
+        }
     }
 }
