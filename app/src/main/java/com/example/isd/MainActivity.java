@@ -20,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
         EditText companyText    = findViewById(R.id.company);
         EditText ageText        = findViewById(R.id.age);
 
+        User user = new User(nameText.getText().toString(),
+                            companyText.getText().toString(),
+                            Integer.parseInt(ageText.getText().toString()));
+
         Intent intent = new Intent(this, SecondActivity.class);
-        intent.putExtra("name",     nameText.getText().toString());
-        intent.putExtra("company",  companyText.getText().toString());
-        intent.putExtra("age",      Integer.parseInt(ageText.getText().toString()));
+        intent.putExtra(User.class.getSimpleName(), user);
 
         startActivity(intent);
     }
