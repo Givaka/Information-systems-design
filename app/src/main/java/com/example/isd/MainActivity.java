@@ -18,13 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         videoPlayer = findViewById(R.id.videoPlayer);
-        String uriString = "android.resource://" + getPackageName() + "/" + R.raw.ngcyu;
-        Uri videoUri = Uri.parse(uriString);
-        videoPlayer.setVideoURI(videoUri);
-
-        MediaController mediaController = new MediaController(this);
-        videoPlayer.setMediaController(mediaController);
-        mediaController.setMediaPlayer(videoPlayer);
+        videoPlayer.setVideoPath("http://techslides.com/demos/sample-videos/small.mp4");
     }
 
     public void play(View view){
