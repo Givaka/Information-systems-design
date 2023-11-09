@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
         String uriString = "android.resource://" + getPackageName() + "/" + R.raw.ngcyu;
         Uri videoUri = Uri.parse(uriString);
         videoPlayer.setVideoURI(videoUri);
+
+        MediaController mediaController = new MediaController(this);
+        videoPlayer.setMediaController(mediaController);
+        mediaController.setMediaPlayer(videoPlayer);
     }
 
     public void play(View view){
