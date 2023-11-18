@@ -7,34 +7,12 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView1"
-        style="@style/TextViewStyle"
-
-        android:text="Android Lollipop"
+        android:id="@+id/selectedMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="28sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        />
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/TextViewStyle"
-
-        android:text="Android Marshmallow"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
-        />
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/TextViewStyle"
-
-        android:text="Android Nougat"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
