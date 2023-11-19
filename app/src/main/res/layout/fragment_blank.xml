@@ -3,12 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BlankFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/updateButton"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Обновить"
+            />
+
+        <TextView
+            android:id="@+id/dateTextView"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@+id/updateButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            android:text="Hello from Fragment"
+            android:textSize="26sp"
+            android:gravity="center"
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
