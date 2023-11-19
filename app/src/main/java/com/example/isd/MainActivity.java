@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,34 +23,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void saveText (View view){
-        FileOutputStream fos = null;
+    private File getExternalPath(){
+        return new File(getExternalFilesDir(null), FILE_NAME);
+    }
 
-        try {
+
+    public void saveText (View view){
+        try (FileOutputStream fos = new FileOutputStream(getExternalPath())) {
             EditText textBox    = findViewById(R.id.editorText);
             String text         = textBox.getText().toString();
 
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             fos.write(text.getBytes());
             Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        } finally {
-            try {
-                if (fos != null) fos.close();
-            } catch (IOException e){
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
         }
     }
 
     public void openText (View view){
-        FileInputStream fin = null;
         TextView textView   = findViewById(R.id.textField);
+        File file           = getExternalPath();
 
-        try {
-            fin = openFileInput(FILE_NAME);
+        if (!file.exists()) return;
 
+        try (FileInputStream fin = new FileInputStream(file)) {
             byte[] bytes = new byte[fin.available()];
             fin.read(bytes);
 
@@ -58,12 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (IOException e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        } finally {
-            try {
-                if (fin != null) fin.close();
-            } catch (IOException e){
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
         }
     }
 }
