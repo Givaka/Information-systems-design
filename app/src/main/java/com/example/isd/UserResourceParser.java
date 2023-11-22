@@ -1,8 +1,10 @@
 package com.example.isd;
 
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 
 public class UserResourceParser {
@@ -16,13 +18,20 @@ public class UserResourceParser {
         return users;
     }
 
-    public boolean parse(XmlPullParser xpp){
+    public boolean parse(String xmlData){
         boolean status      = true,
                 inEntry     = false;
         User currentUser    = null;
         String textValue    = "";
 
         try {
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+
+            factory.setNamespaceAware(true);
+
+            XmlPullParser xpp = factory.newPullParser();
+
+            xpp.setInput(new StringReader(xmlData));
             int eventType = xpp.getEventType();
 
             while (eventType != XmlPullParser.END_DOCUMENT){
